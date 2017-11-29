@@ -2,7 +2,7 @@
   <div class="ad-page">
     <div class="ad-page__container">
       <Carousel v-bind:dogs="dogs" />
-    </div>
+   </div>
   </div>
 </template>
 
