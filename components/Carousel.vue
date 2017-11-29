@@ -49,7 +49,7 @@ export default {
     return {
       amountPerTime: 1,
       visibleAmount: 3,
-      itemSize: 300,
+      itemSize: 320,
       currentStep: 0
     }
   },
@@ -144,8 +144,8 @@ export default {
   margin: 0 auto;
   overflow: hidden;
   border: 5px solid #444;
-  max-width: calc(300px * 3 + 10px);
-  height: 180px;
+  max-width: calc(320px * 3 + 10px);
+  height: 240px;
   position: relative;
 }
 
@@ -184,19 +184,19 @@ export default {
 .Carousel__control--right { text-align: right }
 
 .Carousel__image {
-  width: 300px;
-  min-height: 170px;
+  width: 320px;
+  min-height: 240px;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 610px) {
   .Carousel__canvas {
-    max-width: 300px;
+    max-width: 320px;
   }
 }
 
 @media only screen and (min-width: 611px) and (max-width: 910px) {
   .Carousel__canvas {
-    max-width: calc(300px * 2 + 10px);
+    max-width: calc(320px * 2 + 10px);
   }
 }
 
