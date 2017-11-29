@@ -2,9 +2,9 @@
   <div class="ad-page">
     <div class="Dog">
       <img v-bind:src="dog.url" v-if="!isVideo">
-      <video controls v-if="isVideo" autoplay>
-        <source v-bind:src="dog.url" type="video/mp4">
-      </video>
+        <video controls v-if="isVideo" autoplay>
+          <source v-bind:src="dog.url" type="video/mp4">
+        </video>
     </div>
 
     <!-- <Dog v-bind:dog="dog" /> -->
@@ -35,6 +35,9 @@ export default {
 <style lang="sass" scoped>
   .Dog
     max-width: 680px
+    padding: 0 20px
   img
     max-width: 100%
+  video
+    width: 100%
 </style>
