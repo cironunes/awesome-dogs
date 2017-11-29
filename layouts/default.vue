@@ -6,6 +6,7 @@
         <nuxt-link class="ad-header__nav-item" to="/thedogapi">The dog API</nuxt-link>
         <nuxt-link class="ad-header__nav-item" to="/dogceodog">Dog CEO Dog</nuxt-link>
         <nuxt-link class="ad-header__nav-item" to="/visualhunt">Visual hunt</nuxt-link>
+        <nuxt-link class="ad-header__nav-item" to="/woof">Woof</nuxt-link>
       </nav>
     </header>
 

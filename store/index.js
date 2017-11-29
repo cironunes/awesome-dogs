@@ -2,19 +2,29 @@ import axios from '~/plugins/axios'
 
 export const state = () => {
   return {
-    dogs: [{ id: 1, url: 'dog1.jpg' }]
+    dogs: [{ id: 1, url: 'dog1.jpg' }],
+    dog: { url: '' }
   }
 }
 
 export const mutations = {
   setDogs (state, dogs) {
     state.dogs = dogs
+  },
+  setDog (state, dog) {
+    state.dog = dog
   }
 }
 
 export const actions = {
   async nuxtServerInit ({ dispatch }) {
     // dispatch('GET_DOGS_VISUAL')
+  },
+  async GET_DOG ({ commit }) {
+    const { data } = await axios.get('https://random.dog/woof.json')
+    const dog = data
+    console.log(dog)
+    commit('setDog', dog)
   },
   async GET_DOGS_VISUAL ({ commit }) {
     const { data } = await axios.get('http://localhost:3000/visualhunt-dogs.json')
@@ -28,9 +38,11 @@ export const actions = {
   },
   async GET_DOGS_CEO ({ commit }) {
     const { data } = await axios.get('https://dog.ceo/api/breed/dachshund/images')
-    const dogs = data.message.splice(0, 13).map((url, id) => {
-      return { id, url }
-    })
+    const dogs = data.message.splice(0, 13).map(mapDog)
     commit('setDogs', dogs)
   }
+}
+
+const mapDog = (url, id) => {
+  return { id, url }
 }

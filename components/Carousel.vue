@@ -22,13 +22,11 @@
     <div class="Carousel__canvas">
       <ul class="Carousel__container">
         <li v-for="(dog, index) in dogs" :key="dog.id" class="Carousel__item">
-          <!-- <span>{{ index + 1 }}</span> -->
           <img v-bind:src="dog.url" class="Carousel__image">
         </li>
       </ul>
       <ul class="Carousel-ghost Carousel__container" v-bind:class="{ 'Carousel-ghost--active': isGhostVisible }">
         <li v-for="(dog, index) in dogs" :key="dog.id" class="Carousel__item">
-          <!-- <span>{{ index + 1 }}</span> -->
           <img v-bind:src="dog.url" class="Carousel__image">
         </li>
       </ul>
