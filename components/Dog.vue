@@ -12,16 +12,18 @@ export default {
   props: ['dog'],
   computed: {
     isVideo () {
-      console.log(this.dog)
       return this.dog.url.endsWith('.mp4')
     }
   }
 }
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
   .Dog
     max-width: 680px
+    padding: 0 20px
   img
     max-width: 100%
+  video
+    width: 100%
 </style>
