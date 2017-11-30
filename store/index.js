@@ -27,7 +27,7 @@ export const actions = {
     commit('setDog', dog)
   },
   async GET_DOGS_VISUAL ({ commit }) {
-    const { data } = await axios.get('http://localhost:3000/visualhunt-dogs.json')
+    const { data } = await axios.get('/visualhunt-dogs.json')
     const dogs = data.dogs
     commit('setDogs', dogs)
   },
