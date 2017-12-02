@@ -8,7 +8,6 @@
 
 <script>
 import { mapState } from 'vuex'
-import axios from '~/plugins/axios'
 import Carousel from '~/components/Carousel'
 
 export default {

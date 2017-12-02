@@ -9,7 +9,6 @@
 <script>
 import { mapState } from 'vuex'
 import Carousel from '~/components/Carousel'
-import axios from '~/plugins/axios'
 
 export default {
   computed: mapState(['dogs']),

@@ -6,7 +6,6 @@
 
 <script>
 import { mapState } from 'vuex'
-import axios from '~/plugins/axios'
 import Dog from '~/components/Dog'
 
 export default {
