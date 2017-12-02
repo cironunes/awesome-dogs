@@ -1,5 +1,9 @@
 const INITIAL_STATE = {
-  dogs: [{ id: 1, url: 'dog1.jpg' }],
+  dogs: [
+    { id: 1, url: 'dog1.jpg' },
+    { id: 2, url: 'dog2.jpg' },
+    { id: 3, url: 'dog3.jpg' }
+  ],
   dog: { url: 'dog2.jpg' }
 };
 
