@@ -21,7 +21,6 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    vendor: ['axios'],
     /*
     ** Run ESLint on save
     */
@@ -35,6 +34,12 @@ module.exports = {
     //     })
     //   }
     // }
+  },
+  modules: ['@nuxtjs/axios'],
+  axios: {
+    baseURL: '',
+    browserBaseURL: '',
+    credentials: false
   },
   css: ['@/assets/awesomedogs.sass']
 }
