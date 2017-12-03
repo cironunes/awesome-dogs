@@ -36,22 +36,6 @@ app.get('/woof-api', (req, res, done) => {
     });
 });
 
-// createEndpoint('/the-dog-api', 'http://random.dog/woof.json');
-// createEndpoint('/woof', 'http://random.dog/woof.json');
-
 app.listen(port, () => {
   console.log(`Magic happens on port ${port}`);
 });
-
-
-
-
-function createEndpoint(endpoint, url) {
-  app.get(endpoint, (req, res, done) => {
-    return axios.get(url)
-      .then(({ data }) => {
-        res.json(data);
-        done();
-      });
-  });
-}
