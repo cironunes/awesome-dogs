@@ -4,7 +4,7 @@ const INITIAL_STATE = {
     { id: 2, url: 'dog2.jpg' },
     { id: 3, url: 'dog3.jpg' }
   ],
-  dog: { url: 'dog2.jpg' }
+  dog: { url: '' }
 };
 
 export const state = () => {
@@ -26,7 +26,7 @@ export const actions = {
     // dispatch('GET_DOGS')
   },
   async GET_DOG ({ commit }) {
-    const { data } = await this.$axios.get('//random.dog/woof.json')
+    const { data } = await this.$axios.get('/woof-api')
     const dog = data
     commit('setDog', dog)
   },
@@ -36,7 +36,7 @@ export const actions = {
     commit('setDogs', dogs)
   },
   async GET_DOGS_THE_DOGS ({ commit }) {
-    const { data } = await this.$axios.get('//api.thedogapi.co.uk/v2/dog.php?limit=13/')
+    const { data } = await this.$axios.get('/the-dog-api')
     const dogs = data.data
     commit('setDogs', dogs)
   },
