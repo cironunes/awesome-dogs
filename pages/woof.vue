@@ -1,6 +1,8 @@
 <template>
   <div class="ad-page">
-    <Dog v-bind:dog="dog" />
+    <div class="ad-page__container">
+      <Dog v-bind:dog="dog" />
+    </div>
   </div>
 </template>
 

@@ -7,8 +7,6 @@
       <br>
       <span>Current step: {{ currentStep }}</span>
       <br>
-      <span>Item size: {{ itemSize }}</span>
-      <br>
       <span>Steps: {{ Math.floor(steps) }}</span>
       <br>
       <span>Position: {{ position }}</span>
@@ -18,6 +16,9 @@
       <span>Is ghost visible? {{ isGhostVisible }}</span>
       <br>
       <span>Visible amount: {{ visibleAmount }}</span>
+      <br>
+      <span>Item size: {{ itemSize }}</span>
+      <br>
     </div>
     <div class="Carousel__canvas">
       <ul class="Carousel__container">
@@ -48,9 +49,9 @@ export default {
   data () {
     return {
       amountPerTime: 1,
-      visibleAmount: 3,
-      itemSize: 320,
-      currentStep: 0
+      visibleAmount: 1,
+      currentStep: 0,
+      itemSize: 960
     }
   },
   mounted () {
@@ -58,11 +59,13 @@ export default {
       this.$ghost = this.$el.querySelector('.Carousel-ghost')
       this.$carouselContainer = this.$el.querySelector('.Carousel__container')
       this.$carouselCanvas = this.$el.querySelector('.Carousel__canvas')
+      this.$carouselImages = this.$el.querySelector('.Carousel__image')
 
       window.addEventListener('resize', this.onWindowResize)
 
       this.currentStep = this.step
       this.setVisibleAmount()
+      this.setItemSize()
     })
   },
   computed: {
@@ -95,6 +98,10 @@ export default {
   methods: {
     onWindowResize () {
       this.setVisibleAmount()
+      this.setItemSize()
+    },
+    setItemSize() {
+      this.itemSize = this.$el ? this.$el.querySelector('.Carousel__image').clientWidth : 960
     },
     setVisibleAmount () {
       this.visibleAmount = Math.max(Math.floor(this.$carouselCanvas.clientWidth / this.itemSize), 1)
@@ -145,7 +152,7 @@ export default {
   overflow: hidden;
   border: 5px solid #444;
   max-width: calc(320px * 3 + 10px);
-  height: 240px;
+  height: 540px;
   position: relative;
 }
 
@@ -184,19 +191,31 @@ export default {
 .Carousel__control--right { text-align: right }
 
 .Carousel__image {
-  width: 320px;
-  min-height: 240px;
+  width: 960px;
+  min-height: 540px;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 610px) {
   .Carousel__canvas {
     max-width: 320px;
+    height: 180px;
+  }
+
+  .Carousel__image {
+    width: 320px;
+    min-height: 180px;
   }
 }
 
 @media only screen and (min-width: 611px) and (max-width: 910px) {
   .Carousel__canvas {
-    max-width: calc(320px * 2 + 10px);
+    max-width: 768px;
+    height: 432px;
+  }
+
+  .Carousel__image {
+    width: 768px;
+    min-height: 432px;
   }
 }
 

@@ -1,6 +1,6 @@
 <template>
-  <div class="ad-page">
-    <div class="ad-page__container">
+  <div class="ad-page ad-page--image">
+    <div class="ad-page__container ad-page__container--full">
       <Carousel v-bind:dogs="dogs" />
     </div>
   </div>
