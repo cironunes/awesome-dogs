@@ -4,7 +4,7 @@ const axios = require('axios');
 const cors = require('cors');
 
 const app = express();
-const port = 4200;
+const port = process.env.PORT || 4200;
 
 app.use(cors());
 app.use(express.static('dist'));

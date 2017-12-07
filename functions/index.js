@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/the-dog-api', (req, res, done) => {
-  return axios.get('http://api.thedogapi.co.uk/v2/dog.php?limit=13/')
+  return axios.get('https://api.thedogapi.co.uk/v2/dog.php?limit=13/')
     .then((response) => {
       res.json(response.data);
       done();
@@ -27,7 +27,7 @@ app.get('/the-dog-api', (req, res, done) => {
 });
 
 app.get('/woof-api', (req, res, done) => {
-  return axios.get('http://random.dog/woof.json')
+  return axios.get('https://random.dog/woof.json')
     .then(({ data }) => {
       res.json(data);
       done();

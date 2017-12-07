@@ -4,6 +4,7 @@
   "description": "Nuxt.js project",
   "author": "Ciro Nunes <ciroanunes@gmail.com>",
   "private": true,
+  "main": "server.js",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",

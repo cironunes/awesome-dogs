@@ -8,5 +8,5 @@ npm-debug.log
 .nuxt
 
 # Nuxt generate
-dist
+#dist
 firebase-debug.log
